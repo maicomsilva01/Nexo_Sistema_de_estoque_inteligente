@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Nexo Estoque",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 15, "left": 10, "attrs": {} },
+    { "type": "wokwi-rc522", "id": "rfid", "top": 30, "left": 240, "attrs": {} },
+    { "type": "board-ssd1306", "id": "oled", "top": 220, "left": 240, "attrs": { "i2cAddress": "0x3c" } }
+  ],
+  "connections": [
+    [ "esp:3V3", "rfid:3.3V", "red", [ "v0" ] ],
+    [ "esp:GND.1", "rfid:GND", "black", [ "v0" ] ],
+    [ "esp:5", "rfid:SDA", "green", [ "h0" ] ],
+    [ "esp:18", "rfid:SCK", "blue", [ "h0" ] ],
+    [ "esp:23", "rfid:MOSI", "orange", [ "h0" ] ],
+    [ "esp:19", "rfid:MISO", "purple", [ "h0" ] ],
+    [ "esp:22", "rfid:RST", "yellow", [ "h0" ] ],
+    [ "esp:3V3", "oled:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.1", "oled:GND", "black", [ "v0" ] ],
+    [ "esp:21", "oled:SDA", "cyan", [ "h0" ] ],
+    [ "esp:17", "oled:SCL", "magenta", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

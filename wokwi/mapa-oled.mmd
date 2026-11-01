@@ -1,0 +1,30 @@
+flowchart LR
+  subgraph ESP32["ESP32 DevKit v1 · pinos livres"]
+    direction TB
+    E3V3["3V3"]
+    EGND["GND"]
+    E21["GPIO 21"]
+    E17["GPIO 17"]
+  end
+
+  subgraph OLED["OLED SSD1306 · 128×64 · I²C 0x3C"]
+    direction TB
+    OVCC["VCC"]
+    OGND["GND"]
+    OSDA["SDA"]
+    OSCL["SCL"]
+  end
+
+  E3V3 ---|"Vermelho · 3,3 V"| OVCC
+  EGND ---|"Preto · terra"| OGND
+  E21 ---|"Ciano · dados I²C"| OSDA
+  E17 ---|"Magenta · clock I²C"| OSCL
+
+  classDef pin fill:#ffffff,stroke:#cbd5e1,stroke-width:1.5px,color:#0f172a,font-size:16px
+  class E3V3,EGND,E21,E17,OVCC,OGND,OSDA,OSCL pin
+  style ESP32 fill:#eff6ff,stroke:#2563eb,stroke-width:2px
+  style OLED fill:#fefce8,stroke:#ca8a04,stroke-width:2px
+  linkStyle 0 stroke:#ef4444,stroke-width:4px
+  linkStyle 1 stroke:#475569,stroke-width:4px
+  linkStyle 2 stroke:#06b6d4,stroke-width:4px
+  linkStyle 3 stroke:#d946ef,stroke-width:4px

@@ -1,0 +1,42 @@
+flowchart LR
+  subgraph ESP32["ESP32 DevKit v1 · placa"]
+    direction TB
+    E3V3["3V3"]
+    EGND["GND.1"]
+    E5["GPIO 5"]
+    E18["GPIO 18"]
+    E23["GPIO 23"]
+    E19["GPIO 19"]
+    E22["GPIO 22"]
+  end
+
+  subgraph RC522["MFRC522 · leitor RFID"]
+    direction TB
+    R3V3["3.3V"]
+    RGND["GND"]
+    RSDA["SDA / SS"]
+    RSCK["SCK"]
+    RMOSI["MOSI"]
+    RMISO["MISO"]
+    RRST["RST"]
+  end
+
+  E3V3 ---|"Vermelho · 3,3 V"| R3V3
+  EGND ---|"Preto · terra"| RGND
+  E5 ---|"Verde · chip select"| RSDA
+  E18 ---|"Azul · clock SPI"| RSCK
+  E23 ---|"Laranja · dados para o leitor"| RMOSI
+  E19 ---|"Roxo · dados do leitor"| RMISO
+  E22 ---|"Amarelo · reset"| RRST
+
+  classDef pin fill:#ffffff,stroke:#cbd5e1,stroke-width:1.5px,color:#0f172a,font-size:16px
+  class E3V3,EGND,E5,E18,E23,E19,E22,R3V3,RGND,RSDA,RSCK,RMOSI,RMISO,RRST pin
+  style ESP32 fill:#eff6ff,stroke:#2563eb,stroke-width:2px
+  style RC522 fill:#f0fdfa,stroke:#0f766e,stroke-width:2px
+  linkStyle 0 stroke:#ef4444,stroke-width:4px
+  linkStyle 1 stroke:#475569,stroke-width:4px
+  linkStyle 2 stroke:#22c55e,stroke-width:4px
+  linkStyle 3 stroke:#3b82f6,stroke-width:4px
+  linkStyle 4 stroke:#f97316,stroke-width:4px
+  linkStyle 5 stroke:#a855f7,stroke-width:4px
+  linkStyle 6 stroke:#eab308,stroke-width:4px
