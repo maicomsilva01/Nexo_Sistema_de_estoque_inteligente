@@ -1,0 +1,28 @@
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+backend/.env
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.pyright/
+
+# Node e build
+node_modules/
+frontend/dist/
+coverage/
+
+# Artefato de ML reproduzível a partir do banco
+backend/app/ml/modelo.pkl
+
+# Editor e sistema operacional
+.DS_Store
+.idea/
+.vscode/

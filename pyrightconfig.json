@@ -1,0 +1,17 @@
+{
+  "include": ["backend/app"],
+  "exclude": ["**/__pycache__", "**/.venv"],
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Linux",
+  "venvPath": ".",
+  "venv": ".venv",
+  "executionEnvironments": [
+    {
+      "root": "backend",
+      "extraPaths": ["backend"]
+    }
+  ],
+  "typeCheckingMode": "basic",
+  "reportMissingImports": true,
+  "reportUnusedImport": "none"
+}

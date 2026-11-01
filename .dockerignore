@@ -1,0 +1,14 @@
+.git
+.venv
+venv
+node_modules
+frontend/dist
+backend/.env
+**/.env
+.env
+.env.*
+!**/.env.example
+**/__pycache__
+**/*.py[cod]
+backend/app/ml/modelo.pkl
+.DS_Store
